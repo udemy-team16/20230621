@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    #root div {
+      height:100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    img {
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+</body>
+<script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    
+    const App = () => {
+      const [bg, setBg] = React.useState('');
+    const images = [
+      'https://i.pinimg.com/564x/a6/55/f5/a655f51a8ad5243c87bf4c03c6d9fd2b.jpg',
+      'https://i.pinimg.com/564x/57/e3/db/57e3dba80aac4db56f1ae8d3a9129a85.jpg',
+      'https://i.pinimg.com/736x/47/c8/85/47c885fc86915be61c37aa76960da502.jpg',
+      'https://i.pinimg.com/564x/0f/84/b2/0f84b27d63c19878d95fb34cf29b6059.jpg',
+      'https://i.pinimg.com/564x/08/28/6a/08286a47f3694a58e1f671899f5e77a7.jpg',
+      'https://i.pinimg.com/564x/c5/77/6c/c5776ca92518590fa0b67c75e327cc78.jpg',
+      'https://i.pinimg.com/564x/82/53/8e/82538e03f0c4674ac59d67308677411f.jpg'
+    ]
+    const handleBgChange = () => {
+      const num = Math.floor(Math.random() * (images.length -1));
+      const img = images[num];
+
+      setBg(img);
+    }
+    React.useEffect(() => {
+      setBg(images[0]);
+    }, [])
+      return (
+        <div>
+          <img src={bg} alt="배경" width='500px' height='500px' onClick={handleBgChange}/>
+        </div>
+      )
+    }
+
+    ReactDOM.render(<App />, document.getElementById('root'));
+  </script>
+</html>

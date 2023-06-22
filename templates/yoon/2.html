@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <link rel="stylesheet" href="/static/css/yoon/2.css">
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const App = () => {
+            return (
+                <form action="https://www.goodchoice.kr/product/result">
+                    <input type="text" name="keyword" placeholder="가고 싶은 곳을 검색하세요."></input>
+                    <button type="submit">검색</button>
+                </form>
+            )
+        }
+
+        ReactDOM.render(<App/>, document.getElementById("root"))
+    </script>
+</body>
+</html>
